@@ -10,6 +10,7 @@ function formatDate(dateString) {
 function App() {
   const [postData, setPostData] = useState([]);
   const [cardStates, setCardStates] = useState({});
+  const [categories, setCategories] = useState({});
 
   useEffect(() => {
     // Fetch data from the API
