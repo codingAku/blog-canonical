@@ -17,16 +17,33 @@
 }
 
 .p-card{
+  display: flex;
+  flex-direction: column;
   border-radius: 4px;
   border-top: solid 0.2em rgb(168,124,160);
   box-shadow: 0px -1px 3px 2px rgba(99, 99, 99, 0.15);
+  height: 95vh;
+  overflow: hidden;
+  transition: height 0.3s ease; 
+
+}
+
+.p-card__inner{
+  overflow: hidden;
+}
+
+.p-card.expanded {
+  height: fit-content; /* Expand the card to accommodate full content */
+}
+
+Span{
+  color: rgb(40,175,226);
+  cursor: pointer; 
 }
 
 .u{
   border: none;
   background: none;
-  margin-top: 15px;
-  margin-bottom: 15px;
   border-top: 2px dotted lightgray;
 }
 
