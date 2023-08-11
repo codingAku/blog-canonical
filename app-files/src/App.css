@@ -16,3 +16,13 @@
 .App-link {
   color: #61dafb;
 }
+.card{
+  text-align: left;
+  border-radius: 5px;
+  border-top: solid 0.2em rgb(164, 117, 164);
+}
+.u-sv1{
+  border: none;
+  background: none;
+  border-top: 3px dotted lightgray;
+}
