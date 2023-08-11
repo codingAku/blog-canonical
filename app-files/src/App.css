@@ -13,16 +13,23 @@
   justify-content: center;
   font-size: calc(10px + 2vmin);
   color: white;
+  padding: 50px;
 }
 
-.card{
-  border-radius: 5px;
+.p-card{
+  border-radius: 4px;
   border-top: solid 0.2em rgb(168,124,160);
-  padding: 30px;
+  box-shadow: 0px -1px 3px 2px rgba(99, 99, 99, 0.15);
 }
 
-.u-sv1{
+.u{
   border: none;
   background: none;
-  border-top: 3px dotted lightgray;
+  margin-top: 15px;
+  margin-bottom: 15px;
+  border-top: 2px dotted lightgray;
+}
+
+a:link{
+  color: rgb(40,175,226);
 }

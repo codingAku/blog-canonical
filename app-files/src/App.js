@@ -27,23 +27,24 @@ function App() {
         <div className="row">
           {postData.map(post => (
             <div className="col-4" key={post.id}>
-              <Card className="card" highlighted>
-                <h3>CLOUD AND SERVER</h3>
-                <hr className="u-sv1"></hr>
-                <img className="p-card__image" style={{ borderRadius: "5px" }} src={post.featured_media} alt={post.title.rendered} />
+              <div className="p-card">
+                <h5>CLOUD AND SERVER</h5>
+                <hr className="u"></hr>
+                <img className="p-card__image" style={{ borderRadius: "4px" }} src={post.featured_media} alt={post.title.rendered} />
                 <div className="p-card__inner u-no-padding">
                   <h3><a href={post.link}>{post.title.rendered}</a></h3>
-                  <i style={{ fontSize: '0.75em' }}>
+                  <h5><i>
                     By <a href={post._embedded.author[0].link}>{post._embedded.author[0].name}</a> on {formatDate(post.date)}
                   </i>
+                  </h5>
                 </div>
-                <hr className="u-sv1"></hr>
+                <hr className="u"></hr>
                 <div className="p-card__inner u-no-padding">
-                  <p>
+                  <small>
                     <div dangerouslySetInnerHTML={{__html: post.content.rendered}}></div>
-                  </p>
+                  </small>
                 </div>
-              </Card>
+              </div>
             </div>
           ))}
         </div>
