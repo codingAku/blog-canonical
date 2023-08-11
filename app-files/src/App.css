@@ -1,5 +1,7 @@
 .App {
-  text-align: center;
+  text-align: left;
+  color: rgb(64,61,60);
+  font-family: 'Ubuntu', sans-serif;
 }
 
 .App-header {
@@ -13,14 +15,12 @@
   color: white;
 }
 
-.App-link {
-  color: #61dafb;
-}
 .card{
-  text-align: left;
   border-radius: 5px;
-  border-top: solid 0.2em rgb(164, 117, 164);
+  border-top: solid 0.2em rgb(168,124,160);
+  padding: 30px;
 }
+
 .u-sv1{
   border: none;
   background: none;
