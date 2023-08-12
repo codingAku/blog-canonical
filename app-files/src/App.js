@@ -1,6 +1,6 @@
 import './App.css';
 import React, { useState, useEffect } from 'react';
-import Card from '@canonical/react-components/dist/components/Card/Card';
+
 
 function formatDate(dateString) {
   const options = { day: 'numeric', month: 'long', year: 'numeric' };
@@ -17,15 +17,23 @@ function App() {
     fetch('https://people.canonical.com/~anthonydillon/wp-json/wp/v2/posts.json')
     .then(response => response.json())
     .then(data => {
-      // Initialize cardStates object with default values
+   
       const initialCardStates = {};
       data.forEach(post => {
-        initialCardStates[post.id] = false; // Initially, "See more" content is not shown
+        initialCardStates[post.id] = false; 
       });
       setCardStates(initialCardStates);
 
-      // Set fetched post data
+
       setPostData(data);
+
+      const categoryData = {};
+      data.forEach(post => {
+        const categoryNames = post._embedded['wp:term'][1].map(category => category.name);
+        categoryData[post.id] = categoryNames.join(', ');
+      });
+      setCategories(categoryData);
+      
     })
     .catch(error => console.error('Error fetching data:', error));
 }, []);
@@ -44,7 +52,7 @@ function App() {
           {postData.map(post => (
             <div className="col-4" key={post.id}>
                <div className={`p-card ${cardStates[post.id] ? 'expanded' : ''}`}>
-                <h5>CLOUD AND SERVER</h5>
+                <h5>{categories[post.id].toString().toUpperCase().replace(/,([^,]*)$/, ' AND $1')}</h5>
                 <hr className="u"></hr>
                 <img className="p-card__image" style={{ borderRadius: "3px", marginTop:"10px" }} src={post.featured_media} alt={post.title.rendered} />
                 <div className="p-card__inner u-no-padding">

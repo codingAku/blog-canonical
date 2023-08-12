@@ -33,7 +33,7 @@
 }
 
 .p-card.expanded {
-  height: fit-content; /* Expand the card to accommodate full content */
+  height: fit-content;
 }
 
 Span{
