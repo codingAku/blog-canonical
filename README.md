@@ -23,6 +23,12 @@ Navigate to the project directory.
   cd blog-canonical
 ```
 
+Install the dependencies.
+
+```bash
+  npm install
+```
+
 Run the app in the development mode.
 
 ```bash
